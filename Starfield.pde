@@ -47,13 +47,23 @@ interface Particle
 }
 class OddballParticle implements Particle
 {
-	int myX, myY;
+	float myX, myY;
   OddballParticle(){
     myX = myY = 250;
   }
   void move(){
-    myX = myX + (int)(Math.random()*5)-2;
-    myY = myY + (int)(Math.random()*5)-2;
+    if(mouseX < 250){
+      myX = myX + 1;
+    }else if(mouseX > 250){
+      myX = myX -1;
+    }
+    if(mouseY < 250){
+      myY = myY + 1;
+    }else if(mouseY > 250){
+      myY = myY - 1;
+    }
+    //myX = myX + (int)(Math.random()*5)-2;
+    //myY = myY + (int)(Math.random()*5)-2;
   }
   void show(){
     fill(255, 0, 0);
